@@ -92,7 +92,7 @@ class Slider extends Component {
 		let value = this.position(e);
 		this.props.onMouseUp(value);
 	}
-    
+
   	document.removeEventListener('mousemove', this.handleDrag);
   	document.removeEventListener('mouseup', this.handleEnd);
   }
@@ -159,7 +159,7 @@ class Slider extends Component {
   	}
 
   	return {
-  		fill: (this.props.fill >= 0) ? (this.getPositionFromValue(this.props.fill) + grab) : fillPos,
+  		fill: (this.props.fill >= 0) ? (this.getPositionFromValue(this.props.fill)) : fillPos,
   		handle: handlePos,
   	};
   }
