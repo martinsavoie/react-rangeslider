@@ -154,7 +154,7 @@ class Slider extends Component {
   	}
 
   	return {
-  		fill: (this.props.fill) ? (this.getPositionFromValue(this.props.fill) + grab) : fillPos,
+  		fill: (this.props.fill >= 0) ? (this.getPositionFromValue(this.props.fill) + grab) : fillPos,
   		handle: handlePos,
   	};
   }
