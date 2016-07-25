@@ -88,8 +88,11 @@ class Slider extends Component {
   }
 
   handleEnd = (e) => {
-    let value = this.position(e);
-    this.props.onMouseUp(value);
+	if(this.props.onMouseUp){
+		let value = this.position(e);
+		this.props.onMouseUp(value);
+	}
+    
   	document.removeEventListener('mousemove', this.handleDrag);
   	document.removeEventListener('mouseup', this.handleEnd);
   }
