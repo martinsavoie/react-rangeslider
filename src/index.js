@@ -98,6 +98,10 @@ class Slider extends Component {
   }
 
   handleNoop = (e) => {
+	  if(this.props.onMouseUp){
+		  let value = this.position(e);
+		  this.props.onMouseUp(value);
+	  }
   	e.stopPropagation();
   	e.preventDefault();
   }
