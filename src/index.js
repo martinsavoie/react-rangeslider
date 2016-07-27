@@ -98,12 +98,15 @@ class Slider extends Component {
   }
 
   handleNoop = (e) => {
-	  if(this.props.onMouseUp){
-		  let value = this.position(e);
-		  this.props.onMouseUp(value);
-	  }
   	e.stopPropagation();
   	e.preventDefault();
+  }
+
+  handleSliderMouseUp = (e) =>{
+	  if(this.props.onSliderMouseUp){
+		  let value = this.position(e);
+		  this.props.onSliderMouseUp(value);
+	  }
   }
 
   getPositionFromValue = (value) => {
@@ -186,7 +189,8 @@ class Slider extends Component {
 	  		ref="slider"
 	  		className={cx('rangeslider ', 'rangeslider-' + orientation, className)}
 	  		onMouseDown={this.handleDrag}
-	  		onClick={this.handleNoop}>
+	  		onClick={this.handleNoop}
+	        onMouseUp={this.handleSliderMouseUp}>
 	  		<div
 		  		ref="fill"
 		  		className="rangeslider__fill"
